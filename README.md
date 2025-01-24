@@ -5,72 +5,46 @@ A benchmarking test for davbjor-raytracer to benchmark the usage of SIMD instruc
 Through benchmarking with C++ standard library <crono>, testing the time for the pathtracer to run, the program failed to produce a faster version using SIMD than using compiler optimized version of standard C++.
 
 ```
-Without optimization    |  SIMD optimization
+Without optimization   |  SIMD optimization
+Iterations:
+0/15
+time: 1186 ms          | time: 1696 ms
+1/15
+time: 1199 ms          | time: 1702 ms
+2/15
+time: 1196 ms          | time: 1769 ms
+3/15
+time: 1197 ms          | time: 1770 ms
+4/15
+time: 1207 ms          | time: 1924 ms
+5/15
+time: 1196 ms          | time: 1895 ms
+6/15
+time: 1212 ms          | time: 2040 ms
+7/15
+time: 1210 ms          | time: 1847 ms
+8/15 
+time: 1202 ms          | time: 1741 ms
+9/15 
+time: 1197 ms          | time: 1830 ms
+10/15
+time: 1224 ms          | time: 1959 ms
+11/15
+time: 1223 ms          | time: 1797 ms
+12/15
+time: 1255 ms          | time: 1763 ms
+13/15
+time: 1224 ms          | time: 1746 ms
+14/15
+time: 1199 ms          | time: 1765 ms
 
-iteration 0/15
-time: 1186 ms
-iteration 1/15
-time: 1199 ms
-iteration 2/15
-time: 1196 ms
-iteration 3/15
-time: 1197 ms
-iteration 4/15
-time: 1207 ms
-iteration 5/15
-time: 1196 ms
-iteration 6/15
-time: 1212 ms
-iteration 7/15
-time: 1210 ms
-iteration 8/15
-time: 1202 ms
-iteration 9/15
-time: 1197 ms
-iteration 10/15
-time: 1224 ms
-iteration 11/15
-time: 1223 ms
-iteration 12/15
-time: 1255 ms
-iteration 13/15
-time: 1224 ms
-iteration 14/15
-time: 1199 ms
-Execution: 18132 ms
-vs
-iteration 0/15
-time: 1696 ms
-iteration 1/15
-time: 1702 ms
-iteration 2/15
-time: 1769 ms
-iteration 3/15
-time: 1770 ms
-iteration 4/15
-time: 1924 ms
-iteration 5/15
-time: 1895 ms
-iteration 6/15
-time: 2040 ms
-iteration 7/15
-time: 1847 ms
-iteration 8/15
-time: 1741 ms
-iteration 9/15
-time: 1830 ms
-iteration 10/15
-time: 1959 ms
-iteration 11/15
-time: 1797 ms
-iteration 12/15
-time: 1763 ms
-iteration 13/15
-time: 1746 ms
-iteration 14/15
-time: 1765 ms
-Execution time: 27251 ms
+
+Total
+time: 18132 ms         | time: 27251ms
 ```
+
+### Summary:
+SIMD is ca: 50% slower
 
 ## Example of SIMD code:
 An example of the code changed, in this case vector dot-product:
