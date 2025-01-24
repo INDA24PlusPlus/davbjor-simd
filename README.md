@@ -4,6 +4,7 @@ A benchmarking test for davbjor-raytracer to benchmark the usage of SIMD instruc
 ## Result
 Through benchmarking with C++ standard library <crono>, testing the time for the pathtracer to run, the program failed to produce a faster version using SIMD than using compiler optimized version of standard C++.
 
+### Example of path tracing a 1200px wide image with a depth of 6.
 ```
 Without optimization   |  SIMD optimization
 Iterations:
@@ -66,3 +67,8 @@ float simd_dot(vec4 a, vec4 b){
     return _mm_cvtss_f32(xmm_res);
 }
 ```
+
+## Lessons
+Simply doing SIMD functions instead of standard arithmetic operations is slower.
+
+To create a faster result, you need to utilize the parallelization in SIMD, for example tracing 4 or 8 paths at the same time using SIMD instructions.
